@@ -1,0 +1,96 @@
+body{ margin: 0; padding: 0; max-width: 100%; position: relative; background-color: rgb(119, 119, 119); }
+
+h1{ text-align: center; margin-top: 50px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+.contentImages{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-auto-rows: 170px;
+    gap: 20px;
+    justify-items: center;
+    background-color: rgb(75, 75, 75);
+    box-shadow: 0px 0px 10px #000;
+    padding: 10px;
+}
+
+.image{ width: 100%; } 
+.image  img{ width: 100%; height: 100%; object-fit: cover; } 
+
+.imgTall{ grid-row: span 2; }
+
+.image:hover{
+    filter:brightness(50%);
+    transition: linear 0.2s;
+}
+
+.containerSliderImages{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.contentSlider{
+    width: 50%;
+    height: 455px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    gap:0;
+    align-items:center ;
+    width: 300%;
+    height: 100%;
+    margin-left: -100%;
+}
+.slider div{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.slider div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#nextSliderButton, #previousSliderButton{
+    width: 15px;
+    height: 15px;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid #fff;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transition: linear 0.2s;
+}#previousSliderButton:hover, #nextSliderButton:hover{ width: 18px; height: 18px; border-bottom: 10px solid rgb(161, 161, 161); border-left: 10px solid rgb(161, 161, 161);}
+#previousSliderButton{ left: 15px; transform: rotate(45deg) }
+#nextSliderButton{ right: 15px; transform: rotate(-135deg) }
+
+
+@media(max-width:542px){
+    .contentImages{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+}
+
+@media(max-width:630px){
+    .contentSlider{ height: 300px; width: 80%;}
+}
+
+
+
+
+
